@@ -1,10 +1,17 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+from os import remove
 
-from scrape_songs.spiders.album_spider
+from scrape_songs.spiders.album_spider import AlbumSpider
 
 
-def run(args):
-    process = CrawlerProcess(get_project_settings())
+def run(args=None):
+    remove("albums.jl")
+    process = CrawlerProcess(settings={
+        "FEED_FORMAT": "jl",
+        "FEED_URI": "albums.jl"
+    })
+
+    process.crawl(AlbumSpider)
+    process.start()
 
