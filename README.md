@@ -6,3 +6,9 @@ Probably not, but I have. This program will help to solve this problem by using 
 
 ### Purpose
 From this short and sarcastic README, I'm sure you can guess that I don't think anyone besides me will get any use out of this program. This repo is mostly to document things for myself and to practice using git, uploading packages, and writing documentation and good code.
+
+### TODO
+* Figure out links
+* Two part albums
+* Args and piping
+* Album cover?
