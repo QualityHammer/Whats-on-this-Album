@@ -3,10 +3,10 @@ import scrapy
 
 class AlbumSpider(scrapy.Spider):
     name = "albums"
-    start_urls = [
-        'https://en.wikipedia.org/wiki/Step_in_the_Arena_(album)',
-        'https://en.wikipedia.org/wiki/Unlocked_(EP)'
-    ]
+
+    def __init__(self, album_urls, *args, **kwargs):
+        super(AlbumSpider, self).__init__(*args, **kwargs)
+        self.start_urls = album_urls
 
     def parse(self, response):
         song_names = []
