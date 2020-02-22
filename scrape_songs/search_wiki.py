@@ -1,4 +1,4 @@
-from wikipedia import seacrh, page
+from wikipedia import search, page
 
 
 def get_album_title(album_name):
