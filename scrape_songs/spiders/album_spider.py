@@ -11,9 +11,11 @@ class AlbumSpider(scrapy.Spider):
     def parse(self, response):
         song_names = []
         for row in response.css('table.tracklist')[0].css('tr')[1:]:
-            song_names.append(
-                    row.css('td::text')[1].get()
-                    .replace("\\", '').replace("\"", ''))
+            if len(row.css('td::text')) > 1:
+                name = row.css('td::text')[1].get() \
+                        .replace("\\", '').replace("\"", '')
+                if name != "":
+                    song_names.append(name)
 
         yield {
             "song_names": song_names
