@@ -19,14 +19,3 @@ def run(args=None):
     process.crawl(AlbumSpider, album_info['urls'])
     process.start()
 
-
-class test:
-    album_names = [
-        "lynyrd skynyrd Street Survivors",
-        "kendrick section 80"
-    ]
-
-
-if __name__ == "__main__":
-    run(test())
-
